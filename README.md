@@ -42,7 +42,8 @@ GoodCabs is a prominent cab service company operating in 10 tier-2 cities in Ind
 
 # Ad-Hoc Requests
 
-- City-Level Fare and Trip Summary Report
+- City-Level Fare and Trip Summary Report<br>
+
 SQL Code:With total_trips as(SELECT<br>
          c.city_name as city_name,<br>
          t.city_id  as city_id,<br>
