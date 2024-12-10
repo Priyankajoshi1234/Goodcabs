@@ -35,20 +35,20 @@ GoodCabs is a prominent cab service company operating in 10 tier-2 cities in Ind
 
 # The dataset includes:
 
-Trip details (fare, distance, and duration)
-Passenger demographics (new vs. repeat passengers)
-Ratings (passenger and driver)
-Monthly and city-level targets
+- Trip details (fare, distance, and duration)
+- Passenger demographics (new vs. repeat passengers)
+- Ratings (passenger and driver)
+- Monthly and city-level targets
 
 # Ad-Hoc Requests
 
 - City-Level Fare and Trip Summary Report
-SQL Code:With total_trips as(SELECT 
-        c.city_name as city_name,
-        t.city_id  as city_id,
-        COUNT(t.trip_id) AS total_trips,
-        SUM(t.fare_amount) AS fare_amount,
-        SUM(t.distance_travelled_km) AS distance_travelled
+SQL Code:With total_trips as(SELECT<br>
+         c.city_name as city_name,
+         t.city_id  as city_id,
+         COUNT(t.trip_id) AS total_trips,
+         SUM(t.fare_amount) AS fare_amount,
+         SUM(t.distance_travelled_km) AS distance_travelled
     FROM fact_trips t
 	JOIN dim_city c 
     ON t.city_id = c.city_id
