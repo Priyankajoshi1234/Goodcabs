@@ -44,25 +44,25 @@ GoodCabs is a prominent cab service company operating in 10 tier-2 cities in Ind
 
 - City-Level Fare and Trip Summary Report
 SQL Code:With total_trips as(SELECT<br>
-         c.city_name as city_name,
-         t.city_id  as city_id,
-         COUNT(t.trip_id) AS total_trips,
-         SUM(t.fare_amount) AS fare_amount,
-         SUM(t.distance_travelled_km) AS distance_travelled
-    FROM fact_trips t
-	JOIN dim_city c 
-    ON t.city_id = c.city_id
-    GROUP BY t.city_id), 
-trip_fare as 
-(SELECT 
-      city_name, 
-      total_trips,
-      (fare_amount/distance_travelled) as avg_fare_per_km,
-      (fare_amount/total_trips) as avg_fare_per_trip
-FROM total_trips )
-SELECT *,
-(total_trips*100/SUM(total_trips) OVER ()) as pct_contribution_to_total_trips 
-from trip_fare
+         c.city_name as city_name,<br>
+         t.city_id  as city_id,<br>
+         COUNT(t.trip_id) AS total_trips,<br>
+         SUM(t.fare_amount) AS fare_amount,<br>
+         SUM(t.distance_travelled_km) AS distance_travelled<br>
+    FROM fact_trips t<br>
+	JOIN dim_city c<br> 
+    ON t.city_id = c.city_id<br>
+    GROUP BY t.city_id),<br> 
+trip_fare as<br> 
+(SELECT<br> 
+      city_name,<br>
+      total_trips,<br>
+      (fare_amount/distance_travelled) as avg_fare_per_km,<br>
+      (fare_amount/total_trips) as avg_fare_per_trip<br>
+FROM total_trips )<br>
+SELECT *,<br>
+(total_trips*100/SUM(total_trips) OVER ()) as pct_contribution_to_total_trips<br> 
+from trip_fare<br>
 
 
 - Monthly City-Level Trips Target Performance
