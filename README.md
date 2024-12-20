@@ -55,4 +55,3 @@ GoodCabs is a prominent cab service company operating in 10 tier-2 cities in Ind
 - **GoodCabs_Dashboard.pbix:** Interactive Power BI dashboard with detailed analysis.
 - **SQL_Scripts.sql:** SQL queries used for generating insights and fulfilling business requests.
 - **Project_Presentation.pdf**: Comprehensive project presentation detailing insights and recommendations.
-# Goodcabs
